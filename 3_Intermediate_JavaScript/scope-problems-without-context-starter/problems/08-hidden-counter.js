@@ -15,7 +15,17 @@ hidden2(); // returns 1
 
 ***********************************************************************/
 
-// your code here!
+let hiddenCounter = () => {
+  let count = 0;
+  return () => ++count;
+};
+
+let hidden1 = hiddenCounter(); //returns a function
+console.log(hidden1()); // returns 1
+console.log(hidden1()); // returns 2
+
+let hidden2 = hiddenCounter(); // returns a function
+console.log(hidden2()); // returns 1
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
