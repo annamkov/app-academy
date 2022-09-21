@@ -35,22 +35,5 @@ let sentenceMapper = function(str, cb) {
     return newWords.join(" ");
 };
 
-
-let removeVowels = function (word) {
-    let newWord = "";
-    for (let i = 0; i < word.length; i++) {
-        let char = word[i];
-        if (!"aeiou".includes(char)) {
-            newWord += char;
-        }
-    }
-    return newWord;
-};
-
-let result2 = sentenceMapper("this is pretty cool right", removeVowels);
-console.log(result2); // 'ths s prtty cl rght'
-
-
-
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = sentenceMapper;

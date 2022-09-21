@@ -14,9 +14,5 @@ function doesKeyExist(obj, key) {
   return key in obj;
 }
 
-let obj1 = { bootcamp: 'App Academy', course: 'Bootcamp Prep' }
-console.log(doesKeyExist(obj1, 'course')); // => true
-console.log(doesKeyExist(obj1, 'name')); // => false
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = doesKeyExist;

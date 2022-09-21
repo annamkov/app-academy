@@ -22,11 +22,5 @@ let minValueCallback = function(arr, cb) {
     }
 };
 
-console.log(minValueCallback([64, 25, 49, 9, 100]));             // 9
-console.log(minValueCallback([64, 25, 49, 9, 100], Math.sqrt)); // 3
-
-
-
-
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = minValueCallback;

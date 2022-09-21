@@ -18,9 +18,5 @@ function setKeyInObject(obj, string, value) {
   return obj;
 }
 
-let obj1 = { str: "hello" }
-setKeyInObject(obj1, "num", 3); // => {str: "hello", num: 3}
-console.log(obj1);
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = setKeyInObject;
