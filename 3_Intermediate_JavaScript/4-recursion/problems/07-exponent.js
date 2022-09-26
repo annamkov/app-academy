@@ -21,8 +21,20 @@ exponent(5, 5); // 3125
 ***********************************************************************/
 
 function exponent(b, n) {
-  // your code here
+  if (n === 0) return 1;
+
+  if(n > 0){
+    return b * exponent(b, n - 1);
+  }else{
+    return exponent(b, n + 1) / b; //1/2 = 1/2 --> (1/2)/2 = 1/4 ---> (1/4)/2 = 1/8
+  }
 }
+
+console.log(exponent(3, 2)); // 9
+console.log(exponent(2, -2)); // 1/4 (or 0.25)
+console.log(exponent(2,-3));
+console.log(exponent(3,-2));
+console.log(exponent(5, 5)); // 3125
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

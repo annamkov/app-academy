@@ -25,6 +25,10 @@ function range(start, end, arr = []){
 
 }
 
+range(1, 5); // [1, 2, 3, 4]
+range(3, 4); // [3]
+range(7, 6); // []
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = range;
