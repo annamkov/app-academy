@@ -13,7 +13,7 @@ Example 1:
 Given an array of objects with id properties to create our tree:
 
 const categories1 = [
-    { id: 'animals', 'parent': null },
+    { id: 'animals', 'parent': null }, //categories1['parent'] = null
     { id: 'mammals', 'parent': 'animals' }
 ];
 
@@ -64,8 +64,30 @@ The call above should return the tree below:
 ***********************************************************************/
 
 const makeTree = (categories, parent) => {
-  // your code here
+  //base case: parent has no children, (siamese, for example, would filter the categories array to be empty and skip to the return statement)
+  let node = {};
+
+  categories.filter(obj => obj["parent"] === parent) //filter categories to only include objects whose parent === parameter parent
+            .forEach(obj => node[obj.id] = makeTree(categories, obj.id)); //add a key to the node object and assign it a recursive call which will build the tree
+        
+  return node;
 };
+
+const categories2 = [
+  { id: 'animals', 'parent': null },
+  { id: 'mammals', 'parent': 'animals' },
+  { id: 'cats', 'parent': 'mammals' },
+  { id: 'dogs', 'parent': 'mammals' },
+  { id: 'chihuahua', 'parent': 'dogs' },
+  { id: 'labrador', 'parent': 'dogs' },
+  { id: 'persian', 'parent': 'cats' },
+  { id: 'siamese', 'parent': 'cats' }
+];
+
+const tree2 = makeTree(categories2, null);
+console.log(
+  JSON.stringify(tree2, null, 2)
+);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
