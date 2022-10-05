@@ -54,9 +54,29 @@ combinations.
 ***********************************************************************/
 
 function greedyMakeChange(target, coins = [25, 10, 5, 1]) {
-  // no tests for greedyMakeChange so make sure to test this on your own
-  // your code here
+  let result = [];
+
+  let helper = (num, coinsLeft) => {
+    if(coinsLeft.length === 0){
+      return result;
+    }
+
+    let coin = coinsLeft[0];
+    while((num + coin) <= target){
+      num += coin;
+      result.push(coin);
+    }
+
+    helper(num, coinsLeft.slice(1));
+  };
+  
+  helper(0, coins);
+  console.log(result);
 }
+
+greedyMakeChange(21); // [1, 10, 10]
+greedyMakeChange(75); // [25, 25, 25]
+
 
 function makeBetterChange(target, coins = [25, 10, 5, 1]) {
   // your code here
