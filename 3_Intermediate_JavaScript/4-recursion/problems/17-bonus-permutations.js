@@ -13,6 +13,9 @@ permutations([1, 2, 3]) // [[1, 2, 3], [1, 3, 2],
 ***********************************************************************/
 
 function permutations(array){
+
+  if(!Array.isArray(array)) return;
+  
   let permutation = [];
 
   const dfs = (i, nums) => {
