@@ -47,7 +47,6 @@ function askGuess(){
     });
 }
 
-
 function checkGuess(guess){
     if(guess === secretNumber){
         console.log("Correct!");
