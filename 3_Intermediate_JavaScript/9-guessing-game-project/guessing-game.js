@@ -48,19 +48,17 @@ function askGuess(){
 }
 
 function checkGuess(guess){
-    if(guess === secretNumber){
+    if (guess < secretNumber) {
+        console.log("Too low.");
+        return false;
+    }else if(guess > secretNumber){
+        console.log("Too high.");
+        return false;
+    }else{
         console.log("Correct!");
         return true;
     }
-
-    if(guess < secretNumber){
-        console.log("Too low.");
-    }else{
-        console.log("Too high.");
-    }
-    return false;
-
-};
+}
 
 function randomInRange(min, max) {
     min = Math.ceil(min);
