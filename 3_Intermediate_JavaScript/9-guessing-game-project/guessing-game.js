@@ -25,7 +25,6 @@ function askRange(){
             lo = Number(min);
             console.log(`I'm thinking of a number between ${lo} and ${hi}...`);
             secretNumber = randomInRange(lo, hi);
-            //rl.close();
             askGuess();
         });
     });
