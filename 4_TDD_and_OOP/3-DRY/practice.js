@@ -1,5 +1,6 @@
 function multiplyBiggerNumByTwo(num1, num2) {
-  return maxMin(num1, num2).max * 2;
+  let { max } = maxMin(num1, num2);
+  return max * 2;
   /*let bigNum;
   if (max(num1, num2) === num1) {
     bigNum = num1;
@@ -11,7 +12,8 @@ function multiplyBiggerNumByTwo(num1, num2) {
 }
 
 function divideBiggerNumByThree(num1, num2) {
-  return maxMin(num1, num2).max / 3;
+  let { max} = maxMin(num1, num2);
+  return max / 3;
 
   /*let bigNum;
   if (num1 > num2) {
@@ -24,7 +26,8 @@ function divideBiggerNumByThree(num1, num2) {
 }
 
 function eatMostTacos(sum1, sum2) {
-  return `I ate ${maxMin(sum1, sum2).max} tacos.`;
+  let { max } = maxMin(sum1, sum2);
+  return `I ate ${max} tacos.`;
   /*let bigNum;
   if (sum1 > sum2) {
     bigNum = sum1;
@@ -36,7 +39,8 @@ function eatMostTacos(sum1, sum2) {
 }
 
 function adoptSmallerDog(weight1, weight2) {
-  return `I adopted a dog that weighs ${maxMin(weight1, weight2).min} pounds.`;
+  let { min } = maxMin(weight1, weight2);
+  return `I adopted a dog that weighs ${min} pounds.`;
 
   /*let smallDog;
   if (weight1 < weight2) {
