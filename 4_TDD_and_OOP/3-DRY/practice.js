@@ -66,6 +66,15 @@ function maxMin(num1, num2){
           min: min};
 }
 
+let user = {
+  name: 'paula',
+  id: 123,
+  grade: 5
+};
+
+let {grade} = user;
+console.log(grade);
+
 
 /**************************************************************************/
 /* DO NOT CHANGE THE CODE BELOW */
