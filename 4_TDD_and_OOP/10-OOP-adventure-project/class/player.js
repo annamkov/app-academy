@@ -1,3 +1,7 @@
+const { Room } = require('./room');
+const { Item } = require('./item');
+const { Food } = require('./food');
+
 class Player {
 
     constructor(name, startingRoom) {
@@ -33,25 +37,62 @@ class Player {
 
     takeItem(itemName) {
 
-        // Fill this in
+        let room = this.currentRoom;
+        let item = room.getItemByName(itemName); //searches room for item by it's name (returns an object)
 
+        //add item from player's inventory
+        this.items.push(item);
+        //remove item from current room
+        let targetIndex = room.items.indexOf(item);
+        room.items.splice(targetIndex, 1);
     }
 
     dropItem(itemName) {
 
-        // Fill this in
+        let room = this.currentRoom;
+        let item = this.getItemByName(itemName); //searches players inventory for item by it's name (returns an object)
+
+        //drop item into room
+        room.items.push(item);
+        //remove item from player's inventory
+        let targetIndex = this.items.indexOf(item);
+        this.items.splice(targetIndex, 1);
     }
 
     eatItem(itemName) {
-        // Fill this in
-
+        let item = this.getItemByName(itemName);
+        if(item instanceof Food){
+            let targetIndex = this.items.indexOf(item);
+            this.items.splice(targetIndex, 1); //remove food from player's inventory
+        }
     }
 
     getItemByName(name) {
-
-        // Fill this in
+        //items is a list of objects.
+        for(let i = 0; i < this.items.length; i++){
+            if(this.items[i].name === name){
+                return this.items[i];
+            }
+        }
     }
 }
+
+let item = new Item("rock", "just a simple rock");
+let room = new Room("Test Room", "A test room");
+let player = new Player("player", room);
+
+room.items.push(item);
+console.log(room.items.length); //expected: 1
+console.log(player.items.length);  //expected: 0
+
+player.takeItem("rock");
+
+console.log(room.items.length); //expected: 0
+console.log(player.items.length); //expected: 1
+
+console.log(player.items);
+console.log(player.getItemByName("rock"));
+
 
 module.exports = {
   Player,
