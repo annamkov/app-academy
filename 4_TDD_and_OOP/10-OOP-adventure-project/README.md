@@ -21,6 +21,6 @@ Your task is to add different items to this simple adventure world.
     * player.takeItem - Picks up an item from a room into the player's inventory
     * player.dropItem - Drops an item the player is holding into their current room
 3. Create an edible Food class that inherits from Item
-4. Modify the loadWorld function in world.js to create food from world-data.js
+4. Modify the loadWorld function in __world.js__ to create food from __world-data.js__
 5. Implement player.eatItem to allow the player to eat food items, but not non-food items
 6. Bonus: Add new types of enemies, items and rooms
